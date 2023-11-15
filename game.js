@@ -50,9 +50,22 @@ function draw() {
     // Tyhjennä canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Piirrä pelaaja
-    ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+     // Piirrä pelaajan jalat
+    ctx.fillStyle = 'brown'; // Ruskeat jalat
+    ctx.fillRect(player.x, player.y + player.height - 10, player.width, 10);
+
+    // Piirrä pelaajan naama
+    ctx.fillStyle = 'yellow'; // Keltainen naama
+    ctx.fillRect(player.x, player.y, player.width, player.height - 10);
+
+    // Piirrä pelaajan silmät
+    ctx.fillStyle = 'black'; // Mustat silmät
+    ctx.fillRect(player.x + 10, player.y + 10, 5, 5); // Vasen silmä
+    ctx.fillRect(player.x + player.width - 15, player.y + 10, 5, 5); // Oikea silmä
+
+    // Piirrä pelaajan hattu
+    ctx.fillStyle = 'red'; // Punainen hattu
+    ctx.fillRect(player.x, player.y - 10, player.width, 10);
 }
 
 // Kuuntele näppäimistötapahtumia
