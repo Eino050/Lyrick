@@ -38,6 +38,13 @@ function update() {
         player.y = canvas.height - player.height;
         player.velocityY = 0;
     }
+    
+    // Rajoita hahmo pysymään kentän sisällä vaakasuunnassa
+    if (player.x < 0) { // Jos hahmo menee vasemmalle reunalle
+        player.x = 0; // Aseta hahmo takaisin vasemmalle reunalle
+    } else if (player.x + player.width > canvas.width) { // Jos hahmo menee oikealle reunalle
+        player.x = canvas.width - player.width; // Aseta hahmo takaisin oikealle reunalle
+    }
 
     // Piirrä peli
     draw();
